@@ -24,9 +24,19 @@ echo "<hr>";
 $jsonArr =json_decode($jsonstr,1);
 print_r($jsonArr);
 echo "<hr>";
+echo($jsonArr["0"]["name"]["firstname"]);
 echo "<hr>";
-//json to array object
-$userobject =json_decode($jsonstr);
-print_r($jsonArr);
-echo ($userobject->{0}->name->firstname);
 
+
+
+$jsonArr =json_decode($jsonstr);
+print_r($jsonArr);
+echo "<hr>";
+echo ($jsonArr[0]->name->firstname);
+echo "<hr>";
+
+$userstoobjects=(object)$users;// manand balaee mibashad 
+print_r($userstoobjects) ;
+echo "<hr>";
+
+ 
