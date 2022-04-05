@@ -14,8 +14,7 @@ function E($value){
 $string = "test";
 $arr = array("ali","erfan","maryam","ahmad","ali");
 $arr1 = array("name"=>"ali","family"=>"ahmadi","age"=>20);
-A(array_chunk($arr1,2));
-echo "<hr>";
+
 $arr3 = array("a"=>"red","b"=>"green","c"=>"blue","d"=>"yellow");
 $arr4 = array("e"=>"red","f"=>"green","g"=>"blue");
 
