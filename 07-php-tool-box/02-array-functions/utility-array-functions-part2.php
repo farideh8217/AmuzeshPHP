@@ -34,7 +34,7 @@ $name = 'erfan';
 $gender = 'male';
 $age = 20;
 
-$makeArray = compact('name','gender','age');
+$makeArray = compact('name','gender','age');// ارایه درست میکند
 A($makeArray);
 
 extract($arr4);
