@@ -8,7 +8,7 @@ print_r($a);
 echo "<hr>";
 $car=array("pride","bmw","pejo");
 var_dump($car);
-echo ($car); //error --->ba echo, array nemitavan chap kard 
+// echo ($car); //error --->ba echo, array nemitavan chap kard 
 echo "<hr>";
 //associative array yani karbar masalan az yek araye ra index mikonad
 
