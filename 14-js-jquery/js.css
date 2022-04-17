@@ -1,0 +1,29 @@
+body{
+    background: url(1.jpg) ;
+}
+.modal_overlay{
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.modal{
+    background: #fff;
+    margin: 50px auto;
+    width: 60;
+    direction: rtl;
+    text-align: right;
+    padding: 30px;
+    font-family: iransans;
+    position: relative;
+    border-radius: 10px;
+}
+span.close{
+    position: absolute;
+    left: 22px;
+    cursor: pointer;
+    color: red;
+}
