@@ -3,6 +3,8 @@ $array=array(1,2,3,4,5,6);
 foreach($array as $v){ //مقادیر ارایه را داخل متغیر وی میریزد
     echo "$v <br>";
 }
+echo "<hr>";
+
 
 foreach($array as $v){
     if ($v==5)continue;

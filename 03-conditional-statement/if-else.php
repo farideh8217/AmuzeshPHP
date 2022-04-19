@@ -1,23 +1,23 @@
 <?php
 
-// $num=101;
+ $num=100;
 // if ($num==100){
 //     echo "$num is equal 100";
 // }else{
 //     echo "$num is not equal 100";
 // }
 
-// if ($num==100){
-//     echo "شرط 1 برقرار است";
-//     echo "<br>";
-//     if ($num==100){
-//         echo "شرط 2 برقرار است";
-//     }else{
-//         echo "شرط 2 برقرار نیست";
-//     }
-// }else{
-//     echo "شرط یک برقرار نیست";
-// }
+if ($num==100){
+    echo "شرط 1 برقرار است";
+    echo "<br>";
+    if ($num==100){
+        echo "شرط 2 برقرار است";
+    }else{
+        echo "شرط 2 برقرار نیست";
+    }
+}else{
+    echo "شرط یک برقرار نیست";
+}
 
 
 
@@ -48,22 +48,22 @@ if ($users->ali["role"]=="admin"){
 // }
 echo "<hr>";
 
-$arraytojson=json_encode($user); //تبدیل به آرایه جیسون
-$jsontoobject=json_decode($arraytojson);
-if ($jsontoobject->ali->role=="admin"){
-    echo "خوش آمدید مدیر محترم";
-}else{
-    echo "شما به این بخش دسترسی ندارید";
-}
+// $arraytojson=json_encode($user); //تبدیل به آرایه جیسون
+// $jsontoobject=json_decode($arraytojson);
+// if ($jsontoobject->ali->role=="admin"){
+//     echo "خوش آمدید مدیر محترم";
+// }else{
+//     echo "شما به این بخش دسترسی ندارید";
+// }
 
 
-$users=json_decode(json_encode($user));// خلاصه شده دوخط بالا
+// $users=json_decode(json_encode($user));// خلاصه شده دوخط بالا
 
-echo "<hr>";
-if ($users->ali->role=="author" && $users->ali->email="ali@gmail.com"){
-    echo "خوش آمدید";
-}else{
-    echo "رمز عبور اشتباه است";
-}
+// echo "<hr>";
+// if ($users->ali->role=="author" && $users->ali->email="ali@gmail.com"){
+//     echo "خوش آمدید";
+// }else{
+//     echo "رمز عبور اشتباه است";
+// }
 
 
