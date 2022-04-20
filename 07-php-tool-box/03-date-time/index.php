@@ -1,5 +1,8 @@
 <?php
 date_default_timezone_set('Asia/Tehran');//ساعت و همه چی را طبق قاره ی آسیا و شهر ایران نشان میدهد
+echo "<hr>";
+echo "<hr>";
+echo "<hr>";
 echo date('d-m-Y').'<hr>';//سال وماه وروز را نشان می دهد
 echo date('l').'<hr>';//روزی که الان هست را نشان می دهد
 echo date('h:i:sa').'<hr>';//ساعت ودقیقه وثانیه
