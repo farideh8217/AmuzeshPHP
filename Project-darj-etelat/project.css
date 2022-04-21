@@ -1,4 +1,25 @@
 .box{
-    width: 70%;
-    background-color: yellow;   
+    width: 20%;
+    background-color: darkgray; 
+    margin: auto;  
+    margin-bottom: 40px;
+}
+.box1{
+    width: 93%;
+    background-color:lightgray ;
+    padding: 10px;
+}
+#submit{
+    margin: 10px;
+    height: 32px;
+    width: 77px;
+    font-size: 20px;
+}
+.box1 .label{
+    font-size: 24px;
+    margin: 11px;
+}
+.input{
+    width: 206px;
+    height: 24px;
 }
