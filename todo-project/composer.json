@@ -1,0 +1,19 @@
+{
+    "name": "user/todo-project",
+    "description": "a simple todo list project",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "User\\TodoProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "farideh zaker",
+            "email": "farideh.zaker8217@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
