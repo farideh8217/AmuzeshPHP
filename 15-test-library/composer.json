@@ -1,0 +1,25 @@
+{
+    "name": "farideh/testlib",
+    "description": "this is test lib",
+    "type": "library",
+    "require": {
+        "hekmatinasser/verta": "v2.1.1"
+    },
+    "require-dev":{
+        "hekmatinasser/verta": "v2.1.1",
+        "fakerphp/faker": "v1.19.0"   
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Farideh\\Testlib\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "farideh zaker",
+            "email": "farideh.zaker8217@yahoo.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
