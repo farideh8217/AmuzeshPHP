@@ -80,10 +80,14 @@
   </div>
 </div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="assets/js/"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
   <script>
     $(document).ready(function(){
-      
+      $('#addFolderBtn').click(function(e){
+          var input = $('input#addFolderInput');
+          alert(input.val());
+      });
     });
   </script>
 </body>

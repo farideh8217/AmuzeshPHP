@@ -21,6 +21,7 @@ Input {
   padding: 3px 10px;
   border-radius: 3px;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 .page {
   position: absolute;
