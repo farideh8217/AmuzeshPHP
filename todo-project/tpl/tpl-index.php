@@ -23,17 +23,20 @@
       <div class="menu">
         <div class="title">FOLDERS</div>
         <ul>
-          <?php
+        <?php
             foreach ($folders as $folder):?>
-              <li> <i class="fa fa-folder"></i><?= $folder->name ?></li>
+              <li class="folders">
+                <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
+                <a href="?delete_folder=<?= $folder->id ?>" class="remove"> x</i></a>
+              </li>  
           <?php endforeach; ?>
           
           <li class="active"> <i class="fa fa-folder"></i>Current Folder</li>
         </ul>
       </div>
       <div>
-          <input type="text" id="newFolderInput" style="width: 70%; margin-left:5px" placeholder="Add New Folder"/>
-          <button id="newFolderBtn"  class="btn">+</button>
+          <input type="text" id="addFolderInput" style="width: 61%; margin-left:5px" placeholder="Add New Folder"/>
+          <button id="addFolderBtn"  class="btn">+</button>
       </div>
     </div>
     <div class="view">
@@ -78,6 +81,10 @@
 </div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="assets/js/"></script>
-
+  <script>
+    $(document).ready(function(){
+      
+    });
+  </script>
 </body>
 </html>

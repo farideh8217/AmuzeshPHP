@@ -13,6 +13,6 @@ try{
 }catch(PDOException $e){
     diepage('connection failed:'.$e->getMessage()) ;
 }
-echo "connection to database is ok";
+//echo "connection to database is ok";
 
 

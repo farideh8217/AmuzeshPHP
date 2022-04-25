@@ -2,9 +2,15 @@
 
 include "bootstrap/init.php";
 
+if(isset($_GET['delete_folder']) && is_numeric($_GET['delete_folder'])){
+    $deletedcount=deletefolder($_GET['delete_folder']);
+    //echo "$deletedcount folders succesfully deleted";
+}
+
+
+
 $folders=getFolders();
-var_dump($folders[0]->name);
-// $tasks=getTasks($folders);
+$tasks=getTasks();
 
 
 include "tpl/tpl-index.php";
