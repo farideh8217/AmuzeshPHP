@@ -86,7 +86,14 @@
     $(document).ready(function(){
       $('#addFolderBtn').click(function(e){
           var input = $('input#addFolderInput');
-          alert(input.val());
+          $.ajax({
+            url :"process/ajaxHandler.php",
+            method :"post",
+            data :{action:"addFolder",folderName:input.val()},
+            success :function(response){ //نتیجه ای که از سمت سرور می اید اگر موفقیت امیز بود 
+                alert(response); 
+            }
+          })
       });
     });
   </script>

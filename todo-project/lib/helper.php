@@ -1,4 +1,14 @@
 <?php
+function getCurrentUrl(){
+    return 1;
+}
+function isAjaxRequest(){
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest'){
+        return true;
+    }
+    return false;
+}
+
 function diepage($msg){
     echo "<div style='padding: 30px;
     width: 80%;

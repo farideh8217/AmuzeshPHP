@@ -1,10 +1,10 @@
 <?php
 include "constans.php";
-include "config.php";
-include "lib/helper.php";
-include "lib/lib-auth.php";
-include "lib/lib-tasks.php";
-include "vendor/autoload.php";
+include BASE_PATH."config.php";
+include BASE_PATH."lib/helper.php";
+include BASE_PATH."lib/lib-auth.php";
+include BASE_PATH."lib/lib-tasks.php";
+include BASE_PATH."vendor/autoload.php";
 
 
 

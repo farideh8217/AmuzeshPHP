@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body style="line-height: 50px;text-align: center;">
+    <input type="text" id="ajax-input">
     <button id="ajax-send">Send</button>
     <div id="ajax-result">Result Here...</div>
 
@@ -16,17 +17,19 @@
     <script>
         $(document).ready(function(){
             var btn=$('#ajax-send');
+            var input=$('#ajax-input');
             var resultTag=$('#ajax-result');
             btn.click(function(){
+                alert(input.val());
                 $.ajax({
                     url:'ajax-handler.php',
                     method:'post',
-                    data :{msg:'Hi Server'},
-                    success:function(success){
-                        resultTag.html(Response); 
+                    data :{data:input.val()},
+                     success:function(response){
+                        resultTag.html(response); 
                     },
-                    error:function(Response){
-                        resultTag.html(Response); 
+                    error:function(response){
+                        resultTag.html(response); 
                     }
                 });
             });
