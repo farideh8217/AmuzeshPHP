@@ -95,7 +95,7 @@
             },
             success: function(response) { //نتیجه ای که از سمت سرور می اید اگر موفقیت امیز بود 
                 if(response=='1') {
-//                  $("<li>" + folderName + "</li>")
+                  $('<li><a href="#"><i class="fa fa-folder"></i>'+ input.val()+ '</a></li>' ).appendTo('ul.folder-list');
                 } else {
                   alert(response);
                 }
