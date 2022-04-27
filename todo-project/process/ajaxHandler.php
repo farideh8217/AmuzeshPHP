@@ -10,11 +10,11 @@ if(!isset($_POST['action']) || empty($_POST['action'])){
 
 switch($_POST['action']){
     case "addFolder":
-       if(!isset($_POST['folderName']) || strlen($_post['folderName']) < 3){
+       if(!isset($_POST['folderName']) || strlen($_POST['folderName']) < 3){
            echo "نام فولدر باید بزرگتر از 2حرف باشد";
            die();
        }
-       echo addFolders($_post['folderName']);
+       echo addFolders($_POST['folderName']);
     break;
 
     case "addTask":
@@ -22,4 +22,5 @@ switch($_POST['action']){
     default:
         diepage("Invalid Action");
 }
-var_dump($_POST);
+
+// var_dump($_POST);

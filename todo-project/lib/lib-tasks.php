@@ -1,32 +1,42 @@
 <?php
-
-function deletefolder($folder_id){
+function deletefolder(int $folder_id) : int
+{
     global $pdo;
-    $sql="delete from folders where id=$folder_id";
-    $stmt=$pdo->prepare($sql);
+
+    $sql = "delete from `folders` where `id` = $folder_id";
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
     return $stmt->rowCount();
 }
 
-function addFolders($folder_name){
+function addFolders(string $folder_name) : int
+{
     global $pdo;
-    $current_user_id=getCurrentUserId();
-    $sql="INSERT INTO 'folders' (name,user_id) VALUES (:folder_name,:user_id);";
-    $stmt=$pdo->prepare($sql);
-    $stmt->execute([':folder_name'=>$folder_name,':user_id'=>$current_user_id]);
+
+    $current_user_id = getCurrentUserId();
+    $sql = "INSERT INTO `folders` (`name`,`user_id`) VALUES (:folder_name,:user_id);";
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        ':folder_name' => $folder_name,
+        ':user_id' => $current_user_id
+    ];
+    $stmt->execute($values);
     return $stmt->rowCount();
 }
 
-
-function getFolders(){
+function getFolders()
+{
     global $pdo;
-    $current_user_id=getCurrentUserId();
-    $sql="select * from folders where user_id=$current_user_id";
-    $stmt=$pdo->prepare($sql);
+
+    $current_user_id = getCurrentUserId();
+    $sql = "select * from `folders` where `user_id` = $current_user_id";
+    $stmt = $pdo->prepare($sql);
     $stmt->execute();
-    $records=$stmt->fetchAll(PDO::FETCH_OBJ);
+    $records = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $records;
 }
-function getTasks(){
-    return[1,2,3,4,5];
+
+function getTasks() : array
+{
+    return [1,2,3,4,5];
 }

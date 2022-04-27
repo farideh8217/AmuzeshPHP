@@ -22,13 +22,13 @@
       </div>
       <div class="menu">
         <div class="title">FOLDERS</div>
-        <ul>
-        <?php
-            foreach ($folders as $folder):?>
-              <li class="folders">
-                <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
-                <a href="?delete_folder=<?= $folder->id ?>" class="remove"> x</i></a>
-              </li>  
+        <ul class="folder-list">
+
+          <?php foreach ($folders as $folder):?>
+            <li>
+              <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
+              <a href="?delete_folder=<?= $folder->id ?>" class="remove"> x</i></a>
+            </li>  
           <?php endforeach; ?>
           
           <li class="active"> <i class="fa fa-folder"></i>Current Folder</li>
@@ -83,17 +83,20 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="assets/js/script.js"></script>
   <script>
-    $(document).ready(function(){
-      $('#addFolderBtn').click(function(e){
+    $(document).ready(function() {
+      $('#addFolderBtn').click(function(e) {
           var input = $('input#addFolderInput');
           $.ajax({
-            url :"process/ajaxHandler.php",
-            method :"post",
-            data :{action:"addFolder",folderName:input.val()},
-            success :function(response){ //نتیجه ای که از سمت سرور می اید اگر موفقیت امیز بود 
-                if(response='1'){
-
-                }else{
+            url: "process/ajaxHandler.php",
+            method: "post",
+            data: {
+              action:"addFolder",
+              folderName:input.val()
+            },
+            success: function(response) { //نتیجه ای که از سمت سرور می اید اگر موفقیت امیز بود 
+                if(response=='1') {
+//                  $("<li>" + folderName + "</li>")
+                } else {
                   alert(response);
                 }
             }
