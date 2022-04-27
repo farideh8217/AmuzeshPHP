@@ -7,9 +7,17 @@ function deletefolder($folder_id){
     $stmt->execute();
     return $stmt->rowCount();
 }
-function addFolders(){
-    
+
+function addFolders($folder_name){
+    global $pdo;
+    $current_user_id=getCurrentUserId();
+    $sql="INSERT INTO 'folders' (name,user_id) VALUES (:folder_name,:user_id);";
+    $stmt=$pdo->prepare($sql);
+    $stmt->execute([':folder_name'=>$folder_name,':user_id'=>$current_user_id]);
+    return $stmt->rowCount();
 }
+
+
 function getFolders(){
     global $pdo;
     $current_user_id=getCurrentUserId();

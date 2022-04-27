@@ -91,7 +91,11 @@
             method :"post",
             data :{action:"addFolder",folderName:input.val()},
             success :function(response){ //نتیجه ای که از سمت سرور می اید اگر موفقیت امیز بود 
-                alert(response); 
+                if(response='1'){
+
+                }else{
+                  alert(response);
+                }
             }
           })
       });

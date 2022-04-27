@@ -1,2 +1,2 @@
 <?php
-define('BASE_PATH','C:/xampp/htdocs/AmuzeshPHP/todo-project');
+define('BASE_PATH',__DIR__. '/..');
