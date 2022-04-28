@@ -17,6 +17,11 @@ Input {
   border: 1px solid #ccc;
   
 }
+.created-at{
+  font-size: 11px;
+  margin-right: 12px;
+  color: red;
+}
 .btn {
   padding: 3px 10px;
   border-radius: 3px;

@@ -24,7 +24,7 @@ function diepage($msg){
 }
 
 function dd($var){
-    echo "<pre style='color:red ; background:#fff; z-index:1; position:relative; padding:10px; margin:10px; border-radius:5px; border-left:3px solid red' >";
+    echo "<pre style='color:red ; background:#fff;  position:relative; padding:10px; margin:10px; border-radius:5px; border-left:3px solid red' >";
     var_dump($var);
     echo "<pre>";
 }
