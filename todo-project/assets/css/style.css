@@ -194,7 +194,7 @@ a.remove:hover{
   font-weight: 400;
   padding: 0px;
   color: #AAA;
-  margin-top: -18px;
+  margin-top: -18px; 
 }
 .main .view .viewHeader .functions {
   float: right;

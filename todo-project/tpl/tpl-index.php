@@ -23,28 +23,27 @@
       <div class="menu">
         <div class="title">FOLDERS</div>
         <ul class="folder-list">
-
+        <li class="active"> <i class="fa fa-folder"></i>All</li>
           <?php foreach ($folders as $folder):?>
             <li>
               <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
-              <a href="?delete_folder=<?= $folder->id ?>" class="remove"> x</i></a>
+              <a href="?delete_folder=<?= $folder->id ?>" class="remove" onclick="return confirm('are you sure to delete this item?\n <?= $folder->name ?>');"> x</i></a>
             </li>  
           <?php endforeach; ?>
-          
-          <li class="active"> <i class="fa fa-folder"></i>Current Folder</li>
         </ul>
       </div>
       <div>
           <input type="text" id="addFolderInput" style="width: 61%; margin-left:5px" placeholder="Add New Folder"/>
-          <button id="addFolderBtn"  class="btn">+</button>
+          <button id="addTaskBtn"  class="btn">+</button>
       </div>
     </div>
     <div class="view">
       <div class="viewHeader">
-        <div class="title">Manage Tasks</div>
+        <div class="title" style="width: 50%;">
+          <input type="text" id="taskNameInput" style="width:100%;margin-left:3%;line-height:30px" placeholder="Add New Task"/>
+        </div>
         <div class="functions">
           <div class="button active">Add New Task</div>
-          <div class="button">Completed</div>
           <div class="button inverz"><i class="fa fa-trash-o"></i></div>
         </div>
       </div>
@@ -58,7 +57,7 @@
             <span><?=$task->title?></span>
               <div class="info">
                 <span class="created-at">Created At <?=$task->created_at ?></span>
-                <a href="?delete_task=<?= $task->id ?>" class="remove"> x</i></a>
+                <a href="?delete_task=<?= $task->id ?>" class="remove" onclick="return confirm('are you sure to delete this item?\n <?= $task->title ?>');"> x</i></a>
               </div>
             </li>
           <?php endforeach; ?>
