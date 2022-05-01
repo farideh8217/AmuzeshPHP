@@ -10,6 +10,10 @@ function isAjaxRequest(){
     return false;
 }
 
+function site_url($uri = ''){
+    return BASE_URL .$uri;
+}
+
 function diepage($msg){
     echo "<div style='padding: 30px;
     width: 80%;

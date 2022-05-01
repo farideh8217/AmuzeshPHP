@@ -1,7 +1,7 @@
 <?php
 include_once "../bootstrap/init.php";
 
-if(!isAjaxRequest()){
+if(!isAjaxRequest()){ //داخل هلپر نوشته شده این فانکشن
     diepage("inavalid request");
 }
 if(!isset($_POST['action']) || empty($_POST['action'])){
@@ -18,7 +18,17 @@ switch($_POST['action']){
     break;
 
     case "addTask":
-
+        $folderId = $_POST['folderId'];
+        $taskTitle = $_POST['taskTitle'];
+        if(!isset($folderId) || empty($folderId) ){
+            echo "فولدر را انتخاب کنید";
+            die();
+        }
+        if(!isset($taskTitle) || strlen($taskTitle) < 3 ){
+            echo "عنوان تسک باید بزرگتر از دو حرف باشد";
+            die();
+        }
+        echo addTask($taskTitle,$folderId);
     default:
         diepage("Invalid Action");
 }

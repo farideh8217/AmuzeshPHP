@@ -145,9 +145,12 @@ a.remove:hover{
   padding-left: 0px;
   color:#0c7388 ;
 }
-.main .nav .menu ul li a{/*-------------------------------------------------------*/
+.main .nav .menu ul li a{
   text-decoration: none;
   color: #0c7388;
+}
+.main .nav .menu ul li.active a{
+  color: #79BC46;
 }
 .main .nav .menu ul li{
   cursor: pointer;

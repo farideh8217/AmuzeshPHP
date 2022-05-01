@@ -1,8 +1,8 @@
 <?php
-if (!defined('BASE_PATH')){
-    echo "permision denied";
-    die();
+function getCurrentUserId(){
+    return 1;
 }
+
 
 function deletefolder(int $folder_id) : int
 {
@@ -13,6 +13,8 @@ function deletefolder(int $folder_id) : int
     $stmt->execute();
     return $stmt->rowCount();
 }
+
+
 
 function addFolders(string $folder_name) : int
 {
@@ -29,6 +31,8 @@ function addFolders(string $folder_name) : int
     return $stmt->rowCount();
 }
 
+
+
 function getFolders()
 {
     global $pdo;
@@ -41,15 +45,35 @@ function getFolders()
     return $records;
 }
 
+
+//////////////////////////////////////////////////task////////////////
+function addTask($taskTitle,$folderId)
+{
+    global $pdo;
+
+    $current_user_id = getCurrentUserId();
+    $sql = "INSERT INTO `tasks` (`title`,`user_id`,`folder_id`) VALUES (:title,:user_id,:folder_id);";
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        ':title' => $taskTitle,
+        ':user_id' => $current_user_id,
+        ':folder_id' => $folderId
+    ];
+    $stmt->execute($values);
+    return $stmt->rowCount();
+
+}
+
+
+
 function getTasks() 
 {
     global $pdo;
     $folder = $_GET['folder_id'] ?? null;
     $foldercondition = '';
     if (isset($folder) and is_numeric($folder)){
-        $foldercondition = 'and folder_id = $folder';
+        $foldercondition = 'and folder_id = '. $folder;
     }
-
     $current_user_id = getCurrentUserId();
     $sql = "select * from `tasks` where `user_id` = $current_user_id $foldercondition";
     $stmt = $pdo->prepare($sql);
@@ -57,6 +81,8 @@ function getTasks()
     $records = $stmt->fetchAll(PDO::FETCH_OBJ);
     return $records;
 }
+
+
 
 function deleteTask(int $task_id) : int
 {
