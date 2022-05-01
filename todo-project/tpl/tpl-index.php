@@ -54,7 +54,7 @@
           <?php if(sizeof($tasks) > 0) : ?>
           <?php foreach ($tasks as $task):?>
             <li class="<?=$task->is_done ? 'checked' : '' ; ?>">
-            <i class="fa <?=$task->is_done ? 'fa-check-square-o' : 'fa fa-square-o' ; ?> "></i>
+            <i data_taskId="<?=$task->id ?>" class="isDone fa <?=$task->is_done ? 'fa-check-square-o' : 'fa fa-square-o' ; ?> "></i>
             <span><?=$task->title?></span>
               <div class="info">
                 <span class="created-at">Created At <?=$task->created_at ?></span>
@@ -66,6 +66,7 @@
             <li>no task here....</li>
           <?php endif; ?>  
           </ul>
+          
         </div>
         
       </div>
