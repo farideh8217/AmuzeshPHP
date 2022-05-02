@@ -93,3 +93,19 @@ function deleteTask(int $task_id) : int
     $stmt->execute();
     return $stmt->rowCount();
 }
+
+/////////////////////////////////////////
+function doneSwitch($task_id) : int
+{
+    global $pdo;
+
+    $current_user_id = getCurrentUserId();
+    $sql = "Update `tasks` set is_done = 1 - is_done where user_id = :userID and id = :taskID";
+    $stmt = $pdo->prepare($sql);
+    $values = [
+        ':taskID' => $task_id,
+        ':userID' => $current_user_id
+    ];
+    $stmt->execute($values);
+    return $stmt->rowCount();
+}

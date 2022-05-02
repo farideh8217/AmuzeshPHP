@@ -9,6 +9,13 @@ if(!isset($_POST['action']) || empty($_POST['action'])){
 } 
 
 switch($_POST['action']){
+    case "doneSwitch":
+        $task_id = $_POST['taskId'];
+        if(!isset($task_id) || !is_numeric($task_id)){
+            echo "آیدی تسک معتبر نیست";
+            die();
+        }
+        doneSwitch($task_id);
     case "addFolder":
        if(!isset($_POST['folderName']) || strlen($_POST['folderName']) < 3){
            echo "نام فولدر باید بزرگتر از 2حرف باشد";

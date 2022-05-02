@@ -1,6 +1,9 @@
 <?php
-
 include "bootstrap/init.php";
+
+if(!isLoggedIn()){
+    header("location: " . site_url('auth.php'));
+}
 
 if(isset($_GET['delete_folder']) && is_numeric($_GET['delete_folder'])){ //درصفحه تی پی ال ایندکس برای اچ رف ایکن دیلیت است دیلیت فولدر جلوی گت
     $deletedcount=deletefolder($_GET['delete_folder']);

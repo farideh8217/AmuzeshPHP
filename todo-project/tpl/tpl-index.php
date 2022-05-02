@@ -78,6 +78,20 @@
 <script src="assets/js/script.js"></script>
   <script>
     $(document).ready(function() {
+      $('.isDone').click(function(e) {
+          var tid = $(this) .attr('data_taskId')
+          $.ajax({
+            url: "process/ajaxHandler.php",
+            method: "post",
+            data: {
+              action:"doneSwitch",
+              taskId : tid
+            },
+            success: function(response) {
+                  location.reload();
+            }
+          })
+      });
       $('#addFolderBtn').click(function(e) {
         var input = $('input#addFolderInput');
           $.ajax({
