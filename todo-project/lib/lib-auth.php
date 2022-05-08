@@ -6,20 +6,25 @@ function getCurreentUserId(){
 function isLoggedIn(){
     return false;
 }
-function login($user,$password){
+function getUSerByEmail($email){
+    
+}
+function login($email,$password){
+    $user = getUSerByEmail($email);
     return 1;
 }
 function register($userData){
     global $pdo;
-
+   
+    $passHash = password_hash($userData["password"],PASSWORD_BCRYPT);
     $sql = "INSERT INTO `users` (`name`,`email`,`password`) VALUES (:name,:email,:pass);";
     $stmt = $pdo->prepare($sql);
     $values = [
-        ':name' => $folder_name,
-        ':email' => $current_user_id,
-        ':pass' => $folder_name
+        ':name' => $userData['name'],
+        ':email' => $userData['email'],
+        ':pass' => $passHash
     ];
     $stmt->execute($values);
-    return $stmt->rowCount();
+    return $stmt->rowCount() ? true : false;
     return 1;
 }

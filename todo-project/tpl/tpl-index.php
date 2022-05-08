@@ -27,7 +27,7 @@
         <a href="<?= site_url() ?>"><i class="fa fa-folder"></i>All</li></a>
           <?php foreach ($folders as $folder):?>
             <li class="<?= ($_GET['folder_id'] == $folder->id ) ? 'active' : '' ?>">
-              <a href="?folder_id=<?= $folder->id ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
+              <a href= "<?= site_url("?folder_id=$folder->id") ?>"><i class="fa fa-folder"></i><?= $folder->name ?></a>
               <a href="?delete_folder=<?= $folder->id ?>" class="remove" onclick="return confirm('are you sure to delete this item?\n <?= $folder->name ?>');"> x</i></a>
             </li>  
           <?php endforeach; ?>

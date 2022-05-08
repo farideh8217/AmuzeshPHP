@@ -27,6 +27,18 @@ function diepage($msg){
     die();
 }
 
+function message($msg , $cssClass = 'info'){
+    echo "<div class='$cssClass' style='padding: 30px;
+    width: 80%;
+    margin: 50px auto;
+    background: #f9dede;
+    border: 1px solid;
+    color: black;
+    border-radius: 5px;
+    font-family: inherit;'>
+    $msg</div>";
+}
+
 function dd($var){
     echo "<pre style='color:red ; background:#fff;  position:relative; padding:10px; margin:10px; border-radius:5px; border-left:3px solid red' >";
     var_dump($var);
