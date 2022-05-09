@@ -166,6 +166,11 @@ button:focus {
   width: 100%;
   margin: 5px 0;
 }
+.success{
+  background: #def9df !important;
+  border: 1px solid #a4cca6 !important;
+  color: #205217 !important;
+}
 .auth-form:nth-child(1) input:focus {
   border: solid #F8CB98;
 }

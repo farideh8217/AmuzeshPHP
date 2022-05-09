@@ -4,15 +4,36 @@ function getCurreentUserId(){
 }
 
 function isLoggedIn(){
+    return isset($_SESSION['login']) ? true : false;
+}
+
+function getLoggedInUser(){
+    return $_SESSION['login'] ?? null ;
+}
+
+function getUSerByEmail($email){
+    global $pdo;
+    $sql = "SELECT * FROM `users` WHERE email = :email";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':email' => $email]);
+    $records = $stmt->fetchAll(PDO::FETCH_OBJ);
+    return $records[0] ?? null;
+}   
+
+function login($email,$pass){
+    $user = getUSerByEmail($email);
+    if(is_null($user)){
+        return false;
+    }
+    #check the password
+    if(password_verify($pass,$user->password)){
+        #login is successfuly
+        $_SESSION['login'] = $user;
+        return true; 
+    }
     return false;
 }
-function getUSerByEmail($email){
-    
-}
-function login($email,$password){
-    $user = getUSerByEmail($email);
-    return 1;
-}
+
 function register($userData){
     global $pdo;
    
