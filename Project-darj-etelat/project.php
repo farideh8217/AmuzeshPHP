@@ -55,7 +55,7 @@ $rows=mysqli_fetch_all($result,MYSQLI_ASSOC);
     <input id="submit" type="submit" name="submit" value="send">
 </div>
 </form>
-<table border="1" width="500" align="center" ="20px">
+<table  border="1" width="500" align="center" ="20px">
         <tr>
             <td>NAME</td>
             <td>FAMILY</td>
